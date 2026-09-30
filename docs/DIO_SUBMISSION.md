@@ -44,5 +44,5 @@ documentada para evolução futura.
 
 ## Links a preencher ao publicar
 
-- repositório GitHub: `ADICIONE_A_URL_DO_REPOSITORIO`;
-- execução da CI: `ADICIONE_A_URL_DA_ACTION`.
+- repositório GitHub: `https://github.com/gabrielnasciimentoleandro-arch/gelato-demand-forecast`;
+- execução da CI: `https://github.com/gabrielnasciimentoleandro-arch/gelato-demand-forecast/actions`.

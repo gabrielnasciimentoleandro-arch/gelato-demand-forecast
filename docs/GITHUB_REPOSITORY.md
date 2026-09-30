@@ -25,5 +25,4 @@ Público, depois de revisar o histórico e confirmar que nenhum segredo foi incl
 
 ## Estado da publicação
 
-Este arquivo descreve apenas os metadados sugeridos. A publicação não foi executada e nenhuma
-URL de repositório remoto é presumida.
+Publicado em: https://github.com/gabrielnasciimentoleandro-arch/gelato-demand-forecast
