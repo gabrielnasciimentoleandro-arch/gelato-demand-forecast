@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gelato-demand-forecast"
+version = "1.0.0"
+description = "Previsão reproduzível de demanda de sorvetes com scikit-learn, MLflow e FastAPI."
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+license = { text = "MIT" }
+authors = [
+  { name = "Gabriel Nascimento Leandro" },
+]
+dependencies = [
+  "fastapi==0.142.1",
+  "joblib==1.6.0",
+  "matplotlib==3.11.2",
+  "mlflow==3.16.1",
+  "numpy==2.5.3",
+  "pandas==3.0.6",
+  "pydantic==2.13.5",
+  "scikit-learn==1.9.1",
+  "sqlalchemy==2.0.54",
+  "uvicorn[standard]==0.54.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx2==2.13.1",
+  "pip-audit==2.10.1",
+  "pytest==9.1.1",
+  "pytest-cov==7.1.0",
+  "ruff==0.16.9",
+]
+
+[project.scripts]
+gelato-forecast = "gelato_forecast.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gelato_forecast"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-config --strict-markers"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["gelato_forecast"]
+omit = ["src/gelato_forecast/__main__.py"]
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+skip_covered = false
+exclude_also = [
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF", "PL", "PTH", "N", "S"]
+ignore = ["S101", "PLR2004"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101", "S108"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

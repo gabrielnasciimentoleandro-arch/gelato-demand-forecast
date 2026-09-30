@@ -1,0 +1,31 @@
+name: Relatar um erro
+description: Informe um comportamento inesperado reproduzível.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: O que aconteceu e o que era esperado?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Passos para reproduzir
+      placeholder: Liste comandos, entrada e saída observada.
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Versão do Python
+      placeholder: "3.13.14"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs relevantes
+      render: shell

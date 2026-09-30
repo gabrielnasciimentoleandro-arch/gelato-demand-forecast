@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.ruff_cache/
+.mypy_cache/
+.hatch/
+.venv/
+venv/
+wheelhouse/
+
+# Local environment
+.env
+.python-version
+.DS_Store
+.vscode/
+.idea/
+
+# MLflow local state
+mlruns/
+mlartifacts/
+mlflow.db
+*.db-shm
+*.db-wal
+
+# Generated temporary outputs
+reports/tmp/
+*.log

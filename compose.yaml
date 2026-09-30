@@ -1,0 +1,21 @@
+name: gelato-demand-forecast
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: gelato-demand-forecast:local
+    environment:
+      GELATO_MODEL_PATH: /app/models/model.joblib
+      GELATO_METADATA_PATH: /app/models/metadata.json
+    ports:
+      - "${GELATO_API_PORT:-8000}:8000"
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,noexec,nosuid
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped

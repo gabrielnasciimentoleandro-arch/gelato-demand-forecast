@@ -1,0 +1,6 @@
+$schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
+name: gelato-demand-training
+version: 1
+description: Ambiente de treinamento do projeto Gelato Demand Forecast.
+build:
+  path: ../..

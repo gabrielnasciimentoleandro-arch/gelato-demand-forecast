@@ -1,0 +1,20 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: ../..
+command: >-
+  python scripts/run_pipeline.py
+  --data ${{outputs.pipeline_artifacts}}/data/ice_cream_sales.csv
+  --model-dir ${{outputs.pipeline_artifacts}}/models
+  --reports-dir ${{outputs.pipeline_artifacts}}/reports
+  --rows 730
+  --seed 42
+  --test-size 0.2
+experiment_name: gelato-demand-forecast
+display_name: gelato-demand-reproducible-pipeline
+compute: azureml:SUBSTITUA_PELO_COMPUTE
+environment: azureml:gelato-demand-training:1
+outputs:
+  pipeline_artifacts:
+    type: uri_folder
+    mode: rw_mount
+resources:
+  instance_count: 1

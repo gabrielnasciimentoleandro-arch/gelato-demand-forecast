@@ -1,0 +1,4 @@
+A temperatura prevista para amanhã é de 18 graus Celsius.
+A tarde deve alcançar 27 graus Celsius na cidade litorânea.
+Durante o fim de semana, a máxima poderá chegar a 32 graus Celsius.
+Uma onda de calor pode elevar a temperatura para 38 graus Celsius.

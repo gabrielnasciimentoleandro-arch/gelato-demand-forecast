@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-30T00:57:10.739565+00:00",
+  "model_name": "polynomial_ridge",
+  "features": [
+    "temperature_c"
+  ],
+  "target": "ice_creams_sold",
+  "metrics": {
+    "mae": 5.9051,
+    "rmse": 7.6666,
+    "r2": 0.93237
+  },
+  "candidate_cv_results": [
+    {
+      "name": "polynomial_ridge",
+      "cv_rmse": 7.967,
+      "cv_std": 0.6873
+    },
+    {
+      "name": "linear_regression",
+      "cv_rmse": 8.3394,
+      "cv_std": 0.6517
+    },
+    {
+      "name": "random_forest",
+      "cv_rmse": 8.5059,
+      "cv_std": 0.8166
+    }
+  ],
+  "residual_std": 7.6928,
+  "training_temperature_range_c": [
+    11.86,
+    40.9
+  ],
+  "training_rows": 584,
+  "test_rows": 146,
+  "random_seed": 42,
+  "test_size": 0.2,
+  "data_origin": "synthetic and deterministic; not real business data",
+  "runtime": {
+    "python": "3.13.14",
+    "scikit_learn": "1.9.1"
+  },
+  "mlflow": {
+    "enabled": true,
+    "run_id": "609343f1f8b14ed198c58fd8f8c23b70",
+    "experiment_id": "1",
+    "model_uri": "models:/m-781aaff6401a4e8b85a11420ed66e449",
+    "registered_model_version": 1
+  }
+}
